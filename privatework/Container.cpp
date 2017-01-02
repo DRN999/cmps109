@@ -1,3 +1,7 @@
+// Noriaki Nakano
+// Conatiner object
+// cpp file for the Container object
+
 #include "Container.h"
 
 Container::Container()
