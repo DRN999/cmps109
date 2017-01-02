@@ -1,3 +1,4 @@
+
 // Noriaki Nakano
 // private works c++
 
@@ -18,6 +19,7 @@ int main()
 	
 	Container c(10.0, 10.0);
 	Container c2(10.0, 20.0);
+	Container *cptr = &c;
 	
 	cout << endl << "OOP test1:" << endl;
 	cout << "Container length: " << c.ret_length() << endl;
@@ -29,7 +31,12 @@ int main()
 	cout << "Container width: " << c2.ret_width() << endl;
 	cout << "Container area: " << c2.area() << endl;
 	
-	cout << endl;
+	cout << endl << "OOP pointer test:" << endl;
+	cout << "Container length: " << cptr->ret_length() << endl;
+	cout << "Container width: " << cptr->ret_width() << endl;
+	cout << "Container area: " << cptr->area() << endl;
 	
+	cout << endl;
 	return 0;
 }
+

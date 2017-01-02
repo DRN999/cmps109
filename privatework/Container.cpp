@@ -1,3 +1,4 @@
+
 // Noriaki Nakano
 // Conatiner object
 // cpp file for the Container object
@@ -36,3 +37,4 @@ double Container::ret_width()
 {
 	return width;
 }
+
