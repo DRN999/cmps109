@@ -12,7 +12,7 @@ class Container
 		Container(); // constructors
 		Container(double e); // incorrect constructor
 		Container(double l, double w); // parametric constructor
-		~Container(){}; // destructor
+		~Container(); // destructor
 		double area(); // returns area of container
 		double ret_length(); // returns the private variable length
 		double ret_width(); // returns the private variable width

@@ -3,11 +3,18 @@
 // private works c++
 
 #include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+#include <cmath>
+#include <algorithm>
 #include "Container.h"
+
 using namespace std;
 
 int main()
 {
+	
 	int n = 15;
 	int *ptr = &n;
 	
