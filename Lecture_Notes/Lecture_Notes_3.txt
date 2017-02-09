@@ -1,0 +1,36 @@
+Cmps109 Lecturenotes 3
+
+Declaration and Definition:
+- Declare - the name the scope {}, call the fun : change the scope
+if the variable is declared outside the scope, you need to specify if there is a variable with the
+same name of the variable inside the scope.
+
+C++ fundamentals
+Function Call by value:
+Primitive data type:
+Composite/Complex Data types:
+Bitwise operations:
+
+BitFields
+
+RTTI Run-Time Type Information:
+how it works: The way to make the type dynamic at runtime
+macro: typeId, return the name of the variable x;
+- must delete object within heap or something
+- print the same typeIDs with pointers
+- things you can do at runtime
+
+Staic variables:
+- accecible anywhere, but only instantiated once
+
+Malloc in c++:
+- data allocation
+- included in calloc
+- similar to c# malloc
+
+Valloc
+- jumps the page boundary and gives a brand new memory
+- its much easier to do bitwise operation with this and other memory moving type programs
+
+
+

@@ -1,0 +1,82 @@
+CMPS109 Lecture Notes #6
+
+General Constant Expressions:
+- keyword: constexpr
+- can it be changed later? - no
+- execture at compile time
+- some will work for const but not constexpr because constexpr makes sure it runs at compile time
+- will make the program to run faster
+
+Error Handling and Exceptions:
+- throwing an expression and catching the expression
+- strcpy can segfault if input NULL, can make it to throw exceptions instead
+- exception a structure that you can use with the throw keyword
+- handle the code in a way that it doesn't crash
+
+Lambda Functions:
+- [capture-list](params) -> return-type {body}
+- capture is overhead, you sometimes don't want to pass things as parameter
+- nothing if empty, = is default, & for reference
+
+The Object Model:
+- Major and minor elements
+
+Abstraction:
+- how humans use to cope with complexit
+- break down complexity into simpler matters
+- when looking at a problem, look for similarities
+- Simplify the specification of the problem
+- denote the differences(CRISPY boundaries) characteristics of object
+
+Abstraction Types:
+- Entity: "this object will solve this part of the problem" kind of abstraction
+- Action: what this objects has
+- Coincidental: have set of miscillanious functions, group the set of operation of no-relation together
+
+Encapsulation:
+- your model needs to be reuseable
+- Abstraction and Excapsulation are complementary
+- re-adjust the abstraction model, revisit the model to fix redundancies and etc.
+- compartmentalizing - ask who the abstraction can be implemented efficiently
+
+Modularity:
+- partitioning to reduce complexity - sounds like Abstraction
+- namespaces can be used for modularisation
+- modules represent the system architechtures
+- modules need to be independent
+- another level of abstraction but at the code level
+
+Hierarchy:
+- when thinkin of abstraction, will lead to hierarchy
+- important hierarchies: class and onject structure types of hierarchies
+
+Typing:
+- pricise characterization of properties that a collection of entities all share
+- encapsulating everything
+- allow programming languages to enforce design decisions, unlike c# where you can do some nasty things
+- Strong vs weak typing 
+- static vs dynamic
+- polymorphism, very powerful features - inheritance and etc.
+
+Concurrency:
+- going to study threads around the end of the course
+- Computation that exceeds the capacity of a single processor
+- Heavyweight vs Lightweight concurrency: processes vs. threads
+- can end up with procesies that cannot execute because other processes are too aggressive
+- deadlock vs livelock: both are in deadlock, they have a mechanism  to break out of the deadlock, and deadlocks again
+
+HW1: *concentrate:
+- concept of the last problem:
+- MAX_HEAP - a data structure - put a data in a tree, every node is larger than the node below
+- as long as this is kept, the rules of the heap is in place *must be a full tree
+- put it in an array, but processes it like a tree -> need to JUMP
+- look at the code like a list -> be confused, look it like a tree
+- insert - need to figure out how to put data in the right location
+- deletion - put the last element and put it on top, but this does not assure that the tree is correct
+- need to adjust -
+- leave index 0 empty, start on index 1
+- add functionality like adding heaps together
+
+
+
+

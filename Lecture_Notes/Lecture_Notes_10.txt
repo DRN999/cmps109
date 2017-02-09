@@ -1,0 +1,46 @@
+CMPS 109 
+
+Virtual table data: 
+- different problems and those problems are layed out as objects 
+- virtual pointer which points to the virtual table of the data structure 
+
+Simple Inheritance Structure: 
+- pointer might be pointed toward the virtual table and not directly to the other class 
+- put on the right virtual table 
+
+Diamond shape mutiple inheritance structure problem:
+- has to cascade from grand-parent 
+- this will not work because compiler does not know where to inherit from, which path to go through 
+- use virtual inheritance to the inheritance structure, change variables to virtual, and solve the problem 
+- they have one process and they are the same, compiler will know that they are the same 
+- deals with process as if they are the same method, and deal with them as if they are virtually apparent 
+
+Class static methods: 
+- coincidental abstraction: static methods are used for this kind of abstraction 
+- static methods are used when some functionalities don't have a group. put them into a miscillanious static class 
+- a way to package rest of the code 
+
+Classes vs Structs:
+- they are almost the same 
+- if you leave a variable undefined, the varaible will be private in the class, and public in a struct 
+- can essentially create the same structure using struct and class 
+- * gave students the same code, just the different keyword use: macro variable is defined as empty 
+if decide don't want to name it use class, can name it class, but will end up replacing the word class to empty 
+which is really bad, will break at compile time, will not compile 
+
+Upcasting vs Downcasting: casting: 
+- convert and cast from any type to any type, no compiler checking, no runtime checking 
+- really handy, can do very powerful things, but also very dangerous 
+- dynamic casting: check on runtime, has to be polymorphic 
+- const cast: really misleading because it isn't really what it seems to be, in constant member function 
+- a this pointer is treated 
+- reinterpret cast - acts like c-style casting 
+- added to the standard just for completion, (not really important for writing code? keeping it so that there
+are no confusion)
+
+Smart Pointers:
+- normal pointers can be much harder to manage 
+- professer thinks using these are a overhead 
+- 
+
+

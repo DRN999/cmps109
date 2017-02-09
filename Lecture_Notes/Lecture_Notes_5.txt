@@ -1,0 +1,77 @@
+CMPS109 Lecture Notes #5
+
+*Final exam is comp, but more about the second half.
+1 page of cheat sheet with name on it
+
+Hw2:
+Problem 1: invent solution, data structures
+- how to choose the right data structure and implement it
+- there are small tricks for optimization, look for them
+
+Problem 2: give the heap class more functionality
+- explanation for next time
+
+Don't start immidiately, start by thinking about it
+Do not use the delay because it will eat the grade, and the project will be revealed soon after this
+assignment so you need to be ready
+
+Review: macro vs inline: macro happen at pre-processing time and inline will happen at compilation time
+
+Variadic Function: some features I can use on assignments
+- int something(int count, ...){} - undefined number of variables
+- macro in the standard library allows to fetch data directly from the stack
+- tell the macro that whatever its fetching
+- ... needs to be the last parameter
+- can you overload a variadic functions? probably
+- will see the importance when we get to variadic templates
+- va_start(vs_list, put in the last variable before the ...)
+
+Pointer to s Function:
+- *important *really important *very important
+- function is pointer to a piece of code
+- typedef double long (*binary_expression)(void * ptr);
+- represents any function, and named it binary_expression, and this code will return double long and 
+takes in a void pointer
+- very good thing
+- use as placeholder, only a placeholder - introduces the idea of variable functions
+- way to generalize a group of functions
+- functions under follow the definition of binary_expression
+- assign functions just like variables when defining the binary_int object
+- can pass a function as a parameter
+- void pointer allows the callback at the end
+- good things: - can assign functions to the corresponding structures dynamically
+- I can deal with a function as if it is a variable 
+- bad thing about it is that it can run malicious code
+- play with this functionality
+
+operator overloading:
+- primitive types: int i = 0; i += 100; += <- operator designed for the primitive objects
+- want to add objects? overload the operator;
+- cout << emp; <- will print the employee object with the overload, kinda like toString() of java for this
+- can't add new operator, at least to karim's knowledge
+
+Namespaces:
+- delare namespace in .h and include it
+- need to include the header and the namespaces
+- for the example, it might yield an error because multiple namespaces are defined as the same typedef
+need to specify or error
+
+Trailing Return type:
+- won't go deep but will talk about it later
+- auto function_name( <list of parameters> ) -> trailing return type(gives a hint of what the auto will be)
+
+RTTI Run-time type information:
+- auto mysum (auto x, auto y) -> decltype(x+y) {return x + y;}
+- compiler will generate this in the back scene
+- if int + double, figues out the type of int + double and make the auto that type
+- note ahead that the auto will be int
+- if: mysum(10, 10); mysum(10.1, 10); mysum(0.1, 0.2); - compiler will create int mysum(); and double mysum();
+- typeid is no runtime, decltype is on compile time
+
+General Constant Expressions:
+- make the compiler do thing on compile time
+- keyword: constexpr - these variables are executed at compile time
+- they all need to be constants
+- as long as the compiler can guess the value that is going to be passed, it can be in constexpr
+
+

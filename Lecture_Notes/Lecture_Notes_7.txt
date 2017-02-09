@@ -1,0 +1,96 @@
+CMPS 109 Lecture Notes 7
+
+Persistence:
+- property of object in which its existence goes beyond time and/or space
+- stop the program, then start where it stopped, this has to do more with databases
+- all the object information must be saved 
+- need to be able to be compatible with other version of the program 
+
+ -- end of philosophy part -- 
+
+Class - getting into writing code from here -- : 
+- a definition of a classification 
+- when grouping data, group all the functionalities of the data as well 
+- As per Booch: "it is a set of objects that share a common structure, behaviour and semantics"
+- a class is not an object but just a object definition 
+- *Model some part of reality 
+- State, Behavior, and Identity 
+
+Class in C++:
+- class is a reserved word(keyword)
+- class <class_name> : <inheritance definition separated by commas>
+{
+	private:
+		Data Members and method list
+	protected:
+		accessible to this class and its decendants
+	public:
+		accessible to everyone
+	friend:
+	 later 
+}
+
+- constructor: many typed but mainly used for init 
+- selectors - type of methods that returns the part of object
+- Iterators - later
+- there are visability scopes within objects 
+
+Level of Resitrictions: 
+- public: accessible by all class type 
+- protected: accessible to itseld and its decendents
+- private: only accessible to itself
+- friend: kind of dangerous because it breaks incapsulation 
+- being a friend class allows the class assigned to access your private variables
+- ex: if in class A, B is declared as a friend, B can access private variables of A but A cannot 
+accesss the private variables of B 
+- better define a destructor yourself even if it does nothing because the compiler will make a destructor itself
+but that takes more time to compile 
+
+A Simple Banking System: 
+- build software based on OO design and utlize c++ build in OO constructs 
+- review his with the UML tool later, but for now learn this design 
+- need to have a representation of accounts 
+- class BankAccount
+- name, number of accounts, balance, using vectors as lists
+- immportant things: encapsulation and security 
+
+Costructors and Destructors:
+- uses inline code to construct the object
+
+Instantiation and Destruction: 
+- empty initialization is incorrect because there is already a definition of a constructor which is not 
+an empty constructor 
+
+Bank Transactions: 
+- Bank check transaction
+- AtM transaction 
+- deposite/withdrawal
+- use inheritance to implement this 
+- BankTransaction class - an abstract class to define that the decendants an BankTrasaction 
+- applying abstraction which leads to hierarchy 
+- ATmBankTransaction, CheckBankTransaction
+- both will see transaction_amount as their own variables because it is under protected in the abstract class
+
+Method Overloading: 
+- different methods with the same name and different return types
+- even in class and its subclasses 
+
+Virtual Methods:
+- why do we need to add the virtual in this eample 
+-  upon invoking th constructor, if not virtual, the upper things will not be connected
+
+Pure virtual methods: 
+- class with at least one pure vitural method are called base classes 
+
+Bank Transcation modsse:
+- another beirarchy BankTransform 
+- empty class 
+- they don't share anything, the state is smpty
+
+
+ 
+ 
+ 
+ 
+
+

@@ -1,0 +1,95 @@
+CMPS 109 Lecture Notes #9
+
+Separate representation:
+- whatever procedes the template, the template will take in place 
+- run time type of the corresponding object 
+- simple hierarchy based on inheritance 
+- extended with multiple layer to create more hierarchy 
+- banktransaction - ATM&check_banktransaction - banktransactionmode - deposit/withdrawl 
+- the proceding class inherits the preceding class definition 
+- return banktransaction - pure virtual since there is no implementation in the class definition itself(abstration) 
+- what is the logic used here? This is a real ATM & real Check attach to the account and attached to banktransaction 
+- even more hierarchy, these processes spread out the implementation to make it pure 
+- then excute the logic, layer in the hierarchy, create ATMbanktransaction for deposit
+- this is good because it incapsulate, but not good because need to make new classes everytime we want a new banktransaction
+type 
+- solve this by using templates 
+
+Applying Templates:
+- usually, this class - ATMbanktransaction_deposit - head from ATMbanktransaction and deposite - how can we
+generalize this?
+- consider we want to write template<T, H> class ATMBankTransaction, public T, public H{} 
+- this is up to the developer to run it at compile time 
+- execute() - encapsulates everything 
+- replace any banktransaction with T and replace any mode with H 
+- we are putting the template variables: whatever name written in the template keyword 
+- excute do the mode process, pass the defined banktransaction with the casting of T 
+- replacing everything that is implemented with the templates 
+- * UnifiedBankTransaction <T, H>
+- templates are about patterns, as a developer, if you see redundancy, then you should be using a template 
+* should find this in the design stage, not as designing 
+- For example: if ATM all transactions withdraw only one day - only generate only one pass 
+- giving tedious job to the compiler and not deal with the mess 
+- incredibly useful and prevent writing useless code 
+- perfect for this banktransaction hierarchy
+
+UnifiedBankTransaction Invocation:
+- compiler will do all the substitution 
+
+Can we do better?: 
+- what is the edge of the program? 
+- what is the benefit of this design - don't decieved by the fact that the entire thing can be written by one 
+implementation because that will result in an un-extendable badly designed code 
+- instead of providing the object, if we provide the check number only 
+- encapsulate all the functionality inside the template class 
+- BankTransactionModes have similar constructor - have a class that can handle multiple types of constructor 
+- use variadic templates/constructor 
+
+Variadic Constructor: 
+- va_list designed to parse any variables in the arguements 
+- start from parameter and iterate 
+- the two constructors are alike - from the definition point of view, they are identical 
+- Variadic constructor with variadic constuctors 
+- want to make them alike, for the offset, leave them as is 
+
+ExtendableUnifiedBankTransaction: 
+- developed version of UnifiedBankTransaction 
+- single list of parameters for both objects 
+- speaking of offset - Professor's collar is offset on one side 2/1/17 CMPS109 Lecture 
+- third level, but implemented in a way, but written in a way where we don't need to declalre each objects 
+- there is a mechanism where you can write code in runtime and compile it 
+
+Exception Handling: 
+- build another hierarchy of exception - reduce the number of implementations 
+- Check Books Exception: - checks the exception number - prints the exception - and constructor 
+- write final keyword to prevent decendant classes cannot implement it 
+- check general exception: check when check is already used - print exception 
+- invalid checkbook exception 
+- pass the checkbook to the parent constructor 
+- Used Check exception: same thing but with a different print message - how can we use it? 
+- see if the checkbook size is equal to zero 
+- list of all checkbooks available in the bank 
+- loop through all of them to find - it takes the beginning and ending of checkbooks 
+- take lambda function and search inbetweeen the checkbooks 
+- throw invalid checkbook exception
+- when thrown to the main program, can throw it more than one times 
+
+Constuctor type: 
+- different types do exist 
+- study this for completeness 
+- invoke one type of constructor - if see the other the constructor will create a new one for you 
+- quckly look at default constructor 
+- default constructor, can be parameterized or be empty - very simple and easy 
+
+Copy Constuctor: 
+- can coexist with default constuctor 
+- what is the purpose of the copy constructor 
+- used when it is neccesary to preserve the original properties of the default constructor 
+- there should be the source objects 
+- instanciate string - if use copy constructor, compiler does not get confused 
+- please invoke the copy constructor - up to the developer to do this 
+- invoking this myString with a parameter 
+- how the compiler works - explain explictly 
+
+
+

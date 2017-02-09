@@ -1,0 +1,64 @@
+CMPS109 Lecture 4
+
+realloc - re-allocation for larger space of data, realloc checks if the data is exandable without 
+messing with other memory data that might block it. Gets a new pointer but will have the same data.
+
+new operator:
+- ex: char* c = new char(STRING_LENGTH);
+- use delete keyword instead of free, delete is generally for objects, calls the destructor
+- typedef - shorthand so that the programmer does not need to struct everytime the data structure is called
+always use new for atructs and such
+- If in the typedef, there is a data structure, it is the destructor's job to free the data structure inside instead of 
+freeing only the object itself.
+
+Placement new operator:
+- cannot instruct to put data in a specific memory location
+- if I want to calloc (10mb) in a specific location, that is just what placement new does
+- this is beneficial because it reqires much less freeing of memory, in the example, it is only required to free
+only once to free the entire data structure
+- example: for loop through the heap size that is using heap_pt += sizeof(employee_t); and at the end just free the 
+entire heap
+-employee_t* emp = new((void *)heap_ptr)employee_t(); to choose exactly where employee_t object is allocated
+- not under the control of the memory manager when using this feature(within the heap you occupied
+- if you delete something in the middle, it will delete everything in front of it
+
+What is a Function:
+- from slide: Pointer to a block of code
+- return type, function name, parameter, code, return value
+- every time you call a function, you are eating some part of your cpu run-time
+
+Application Binary Interface (ABI):
+- very important when coding for otimization
+- Compiler messes things up
+- when calling a function, the first integer parameter should be in the RDI
+
+Function Call Overhead:
+- on regular complation, paying cpu cycles on needless action, first value on RDI, why would you put the Data on 
+the top of the stack, then bring it back?
+- can be more optimal by just adding RDI with RSI and forget all of that
+
+Function Call by Constant Reference:
+- byvalue() will not work here because it would put the entire vector onto the stack, that is way too big for the stack
+- pass by reference - store integers that are references to the actual data
+
+Static Funcions:
+- static functions are completely different from static variables
+- static functions cannot by called from outside the class
+- wrapper function - compilation warning and linkage error
+- almost opposite indication from static variabes
+
+Inline Functions:
+- inline a keyword, compiler hints to not overhead
+- most of the time would not be inline
+- should be for short lines of code, because otherwise it can get very large
+- inlination is on compliation time not macros for security
+- inline function and inline function with attribute
+- always inline will always inline - should not do it, compatibility issues
+- solution: define it as static, the function is jailed inside the scope always inline atribute without using the
+always inline attribute
+- macros v. inlines - both will do he same thing, or appears to be doing the same thing
+- the difference: macro is not incrementing what you need, the result will be something not expected, but the inline
+will execute as expected
+- inline uses the stack while the macro will not
+
+

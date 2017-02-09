@@ -1,0 +1,62 @@
+CMPS109 Lectre 1
+
+Why OOP?
+- Decomposing code into object existed before OOP oriented language.
+- Classes were emulated without the keyword "class"
+
+Software complexity
+- OO design deals with complexity of code
+- huge software with hundred of peoples working on it -> OO design would have a easy way to divive the working
+- the more flexibility the code has, the more complex it gets
+- the behaviour of discrete system - adds complexity to the program ex. more than one thread to control 
+- mathemaically proven software - b-tool, the tool can check mathematically for bugs, those are also OOP as well
+- Complexity takes the form of a hierarchy - start with big class to smaller sub-classes
+- Intracomponent/Intercomponent linkage, divive up software, connects between the components, reduce Intercomponent connects
+to reduce complexity
+- Important - being simple, if the design gets complex, you are doing something wrong
+- OOP invent to simplify code
+
+Solution:
+- Follow the Roman Empire Approach
+- Divive and Conquer -> basically, use decomposition
+
+Decomposition:
+- Algorithmic Decomposition, what this program is doing and divide it into components
+- OO Decomposition - don't have data in your design, just thinking of the operations
+- objects have their own state, and can be only changed through its own operations
+- ths is benificial because when you encapsulate the data, gives you security
+- which one? -> both
+
+Algorithmic vs OO example, the graphic representation of the OO design is a lot more simple and easy to understand
+- start decomposing with either one, use the resulting design to create the other decomposition
+- start with OO design first
+
+Why start OO design?
+- moving to smaller to large is better, design the system as simple as possible, and add objects later on
+- its much easier to extend then to create an all new class
+- helpful on separation of concerns
+
+2 complementary approaches:
+- Abstraction - decompose into chunks, ingnore smaller details(don't start nitty gritty), 
+- Hierachy 	- class hierachy - structure and behaviour, a class is onlt imaginary, the structure of the object
+			- object hierachy - patterns and interaction, the real thing
+			
+
+The meaning of the Design:
+- at high level - the way to invent the solution
+- design need to take limiations to consideration
+- fix-it-later-regime <- not good
+- software architechture
+
+The importance of Model Building:
+- What is the essence of science? diving factor is research
+- engineering -> process, for something to be called engineering it must have a process
+- that is why modling is important, you don't invent a new process in engineering
+- Layered and stacked by nature: keep on adding on
+- design is generally made of more than one model: different types of diagram use to describe different parts of 
+the program
+
+SOftware design methods:
+- Notation: Language C++ for this class
+- Process: construction of the construction model 
+- Tool: highlight errors in design process, automation 

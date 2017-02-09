@@ -1,0 +1,40 @@
+CMPS 109 Lecture notes #2
+
+recap:
+Importance of Design building:
+- Large programs, think less about functionality until you get the other things right
+- architechture, outcome of the design
+- modeling, large acceptance in engineering in general
+- goes along with the concept of abstraction and decomposition
+- UML, trying to describe the problem in a different perspective
+- proving more perspective give more precise explanation of the problem, and discover all the problems/etc.
+before writing the actual code
+
+Software design methods:
+- Notation, Process, Tools
+- Tools ex. can go without spellcheck but spellcheck will make things much easier, reduce descrepancy within the design
+
+The Object Model:
+- Objects - Instance of a Class -> what describes an object -> object is a state
+- entities that define things on its local states
+- unifies the ideas of alorithmic and data abstraction - algorithmic design vs object-oriented design
+- objects are the runime- the actual things that follows the class definitions
+
+- Classes are the definitions
+
+
+OO Software Development process:
+- OO Analysis OOA: examine the problem
+- OO Design OOD: create a solution for the problem
+- OO Programming: THe development, the previous procedures will make the actual development much smoother
+- if the design is done well, the development should be systimatic
+
+Software life Cycle:
+- Focus on the Second and Third:
+- System and software design
+- Implementation and Unit testing
+
+
+
+
+

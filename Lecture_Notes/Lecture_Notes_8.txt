@@ -1,0 +1,115 @@
+CMPS 109 Lecture Notes #8
+
+- review - different kind of transactions of bank account
+- look at similarities and tried to define a hierarchy 
+- inheritance - differences of transactions done in the decendants 
+- virtual methods - dynamically identifying the type of the specific method(overloading) 
+- pure virtual methods - it doesn't have implementation in main class, at least 1 virtual method 
+
+Inheritance Scope:
+- public inheritance: public becomes public and protected becomes protected in decendant 
+- protected inheritance: public and protected becomes protected in decendant 
+- private inheritance: public and protected becomes private in decendant 
+
+Bank Transaction Modes:
+- utilize virtual keyword - use virtual 
+- pure in the base class - parent 
+- could have put it in the same level, but is the combination of 2 
+- all of these classes can be accessed as banktransaction at declaration time 
+
+Classes and Object Relationships: 
+- Inheritance: start with a base class and break into decendant classes 
+- association - each object has its own life cycle, both objects do not need to exist for each to function
+two objects sharing information 
+- aggregation - special types of association, in aggregation, one object owns the other
+- Composition: another special case of aggregation - one cannot exist without the other
+- depends on how to create the program 
+
+Bank Account Class again:
+- need to have a list of all bank account transaction 
+- create a vector with all the transactions 
+- why use a pointer? : there is s design reason to using a pointer, functional reason 
+- how many bank account can this transaction be associated with? : 2 - transfer 
+- if you don't use the pointer, you need to duplicate all the banktransactions if the transaction is a 
+transfer - if use a pointer, it is unneccesary to duplicate 
+
+Check class:
+- need to builf a class that represents the check
+- create a check with check number 
+- operator == overload : give check and see if the checks are equal 
+
+CheckBook class:
+- sequence of checks - model it 
+- search check book
+- vector of check_banktransactions 
+- make sure the check cannot be withdrawn twice 
+- have class bankaccount in beginning so that the compiler needs something to reference to 
+- bankaccount needs to include checkbooks and other stuff 
+- this is a situation where both need each other 
+- these are going to be resolved at link time 
+- telling the compiler - this class bank account exist and all will be connected in link time of the compiler 
+- checkbook class does not include bankaccount 
+- operator - overloading: can compare checks that might overlap with each other and see how much they overlap 
+
+ATMcard class:
+- have class bankaccount just like the checkbook class 
+- just a container that represents the atm card 
+
+A Moderator CLass: TheBank: 
+- something really big that can arrage the work betweent the objects 
+- global moderator- container that holds everything 
+- all objects can communicate with it 
+- main program 
+
+The Bank Class:
+- typically the bank will contain - all the bankaccounts, banktransactions, ATMcard, and checks 
+- using pointer again to not duplicate data 
+- making the objects as pointer will help expose the data to this object so that we do not have to access it 
+though other effort which takes more time and code 
+- check for checkbook overlapping 
+- check if check class exists 
+- funcationalities: create bankaccount, add ATMcard to bankaccount, execute banktransaction*(important)
+- debit, credit, or transfer? wrappers- wrapping funcalities with interface - not good, there is a way to implement it 
+more efficiently and more generically 
+
+Execution Scenario:
+- create accounts and checks/atmcard to them 
+- then create some banktransaction 
+- take the pin and bring the deposit 
+- the atm machine will know if it wants to withdraw or deposit
+- everything is very easy to use because of encapsulation 
+- transfer: create banktransaction 
+
+Deeper look into BankTransaction: 
+- why does every object need to have a reference the Bank? - it needs to update the bank information
+- if we don't, need to pass all the data in Bank, declaring prevents all this mess 
+- setbanktransactionmode - 
+
+Deeper look into ATMBankTransaction: 
+- any transaction will need to overload those functions: 
+
+Processing a BankTransfer Transaction: 
+- take as a parameter - banktransaction to apply 
+- we first set the bank transaction into findBankAccount in the Bank class 
+- witin the banktransaction- set the object mode 
+- need to get the account number - this is the account number that is being transfered to 
+- if bank account trying to fetch is null, return false 
+- want to execute specifically the withdrawal - needs to process those withdrawl and then deposit to the
+other bank account then return true 
+- validate - can debit the bank account - returns null - eventually fail and return false 
+- debit - checking the balance - if valid, push back 
+- why do we need this process: need a placeholder where we can hold the validation 
+- to validate the check, if the check is not validated, return false 
+- in the process, check but does not return false 
+- after finish everything, need to add the check to used check list so that it cannot be used again 
+
+
+
+
+
+
+
+
+
+
+
